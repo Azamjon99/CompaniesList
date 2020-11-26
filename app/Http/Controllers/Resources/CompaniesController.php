@@ -17,7 +17,7 @@ class CompaniesController extends Controller
      */
     public function index()
     {
-        $companies= CompaniesList::all();
+        $companies= CompaniesList::paginate(10);
         return view('ShowCompany', ['companies'=>$companies]);
     }
 
@@ -49,7 +49,7 @@ return view('CreateCompany');
         $logo= $logoNam. "." .$logoNameEx;
         
         //        Storage::disk('local')->put('public/product_images/'.$name1, 'Contents');
-        $request->logo->storeAs('public/logos', $logo);
+        $request->logo->storeAs('public', $logo);
         
                 
         $arrayToCreate=array('name'=>$name,'email'=>$email, 'website'=>$website,  'logo'=>$logo);
@@ -74,7 +74,7 @@ echo "Company is not created";
     {
         $employees=DB::table('employees')
         ->where('company_id', '=', $id)
-        ->get();
+        ->paginate(10);
         return view('employees', ['employees'=>$employees, 'id'=>$id]);
     }
 

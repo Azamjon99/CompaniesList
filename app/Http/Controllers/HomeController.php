@@ -53,7 +53,7 @@ echo "it is wrong";
     $logo= $logoNam. "." .$logoNameEx;
     
     //        Storage::disk('local')->put('public/product_images/'.$name1, 'Contents');
-    $request->logo->storeAs('public/logos', $logo);
+    $request->logo->storeAs('public', $logo);
     
 
 $arrayToUpdate=array('logo'=>$logo);

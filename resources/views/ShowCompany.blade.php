@@ -34,7 +34,7 @@
 </th>
 
 {{-- Showing logo  --}}
-<td><img src="/storage/logos/{{$company->logo}}" style="border-radius: 50%;" width="100" height="100"/>
+<td><img src="/storage/{{$company->logo}}" style="border-radius: 50%;" width="100" height="100"/>
   
   {{-- Editing logo --}}
   <form action="/company/update/{{$company->id}}"  method="POST" enctype="multipart/form-data">
@@ -73,7 +73,7 @@
     </tbody>
     @endforeach
 </table>
-
+{{ $companies->links() }}
 @endsection
 
 
