@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -36,3 +37,7 @@ Route::post('/company/update/{id}', [App\Http\Controllers\HomeController::class,
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/foo', function () {
+    Artisan::call('storage:link');
+});
