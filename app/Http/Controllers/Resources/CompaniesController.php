@@ -17,7 +17,7 @@ class CompaniesController extends Controller
      */
     public function index()
     {
-        $companies= CompaniesList::paginate(10);
+        $companies= CompaniesList::simplePaginate(10);
         return view('ShowCompany', ['companies'=>$companies]);
     }
 
@@ -74,7 +74,7 @@ echo "Company is not created";
     {
         $employees=DB::table('employees')
         ->where('company_id', '=', $id)
-        ->paginate(10);
+        ->simplePaginate(10);
         return view('employees', ['employees'=>$employees, 'id'=>$id]);
     }
 

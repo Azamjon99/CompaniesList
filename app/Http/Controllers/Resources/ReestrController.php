@@ -20,7 +20,7 @@ class ReestrController extends Controller
     public function index()
     {
       
-        $employees= Employee::paginate(10);
+        $employees= Employee::simplePaginate(10);
         return view('ShowEmployee', ['employees'=>$employees]);
     }
 

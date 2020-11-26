@@ -15,6 +15,7 @@
       <th scope="col">Company id</th>
       <th scope="col">Company logo</th>
       <th scope="col">Company name</th>
+      <th scope="col">Company email</th>
       <th scope="col">Company website</th>
       <th scope="col"  >Edit</th>
       <th scope="col"  >Enter</th>
@@ -49,6 +50,7 @@
 
 {{-- Showing company name --}}
 <td>{{$company->name}}</td>
+<td>{{$company->email}}</td>
 {{-- website --}}
 <td>{{$company->website}}</td>
 
